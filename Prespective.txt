@@ -1,0 +1,31 @@
+
+
+Your role within the team
+ My responsibilities covers CMS Platform ownership, data integration between the systems, monitoring and operational troubleshooting.
+Over time, my role has expanded beyond day-to-day support, involved in automation, migration projects, monitoring improvements.
+
+
+Your perspective on CMS and what you work on at PayPal 
+
+My perspective is that CMS is an important platform and data source for PayPal’s infrastructure and application ecosystem. Many downstream systems depend on CMS data, so the accuracy, availability, and performance of CMS directly affect those consumers.
+
+I maintain and troubleshoot CMS APIs, Browser services and Audit services, work on model and schema changes, and manage data pipelines from ServiceNow into Oracle and BigQuery
+
+I also work on Zettle support and Asset dashboard which currently in progress.
+
+I also worked on the Stream Connector, which supports live and batch synchronization for more than 240 tables. In addition, I enabled historical Service Health status storage and delivered CMS monitoring dashboards for VM health and API performance
+
+The main goal of my work is to reduce manual effort, improve data freshness, modernize legacy integrations, identify issues earlier, and provide reliable data to teams such as Asset Dashboard, Console, Zettle, and other CMS consumers.
+  Also I use to support our team contingent worker when ever they face technical blockers.
+
+
+Your perspective on future change that would enable us to work better
+
+I would like to have our own CMS bot into our #help-cms channel similar to the one which I’ve already deployed in Zettle channel.  Currently Dhiraaj has already built an MCP server for our CMS, which needs to be updated to support this channel. 
+
+We need to make big query data more accurate similar to Servicenow this would enable many users to use our data and this will reduce the API calls to servicenow. 
+I would like have automated deployment for our services earlier many engineers started the work never completed it and I already have a solution built for the stream connect which is currently used for Stream deployment
+
+We have multiple services and jobs handled currently which is scattered and I wanted that to be in single place, as part of this I already built a CMS dashboard which has VM health , CMS performance and Service Health check which is part of that and there are some more jobs which is not part of the dashboard which needs to be addressed.  
+ 
+
