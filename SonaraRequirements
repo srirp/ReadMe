@@ -1,0 +1,441 @@
+SONORA – iOS Music Player
+
+Complete Project Requirements & Development Handover
+
+1. Project Overview
+
+I want to build my own premium music player application for iPhone.
+
+App Name: SONORA
+
+Primary Objective:
+Build a high-quality music player without advertisements, mandatory subscriptions or unnecessary restrictions.
+
+I want to own and control my music library, store my music in cloud storage and play it on my iPhone without consuming too much device storage.
+
+This is initially a personal-use application. I may consider publishing it on the Apple App Store in the future.
+
+I have a Mac mini and an iPhone.
+
+⸻
+
+2. Platform and Technology
+
+* Platform: iOS
+* Development language: Swift
+* UI framework: SwiftUI
+* Audio playback: AVFoundation
+* Advanced audio processing: AVAudioEngine
+* Local database: SwiftData or SQLite
+* Development environment: Xcode
+* Native iOS application preferred over Flutter or React Native.
+
+The application should be designed to support future expansion.
+
+⸻
+
+3. Application Design
+
+I want a premium, modern and minimal interface.
+
+Preferred design direction:
+
+* Dark-themed interface.
+* Premium music-player appearance.
+* Smooth animations.
+* Album artwork prominently displayed.
+* Simple navigation.
+* Fast loading.
+* Easy access to music controls.
+
+Suggested sections:
+
+1. Home
+2. Search
+3. My Library
+4. Cloud Storage
+5. Upload Music
+6. Downloads
+7. Equalizer
+8. Settings
+
+The navigation structure can be improved during development.
+
+⸻
+
+4. Music Sources
+
+The application should support multiple music sources.
+
+A. iPhone Local Storage
+
+* Import music from the iPhone Files app.
+* Support files downloaded through Safari.
+* Import multiple songs.
+* Read available audio metadata.
+* Automatically organize music by artist and album.
+* Display album artwork when available.
+
+B. Cloud Storage
+
+Support these cloud providers:
+
+* Google Drive
+* MEGA
+* Microsoft OneDrive
+* Dropbox
+
+Users should be able to connect their own accounts through secure authentication.
+
+Important requirements:
+
+* Browse cloud folders.
+* Search for music files.
+* Stream music directly from cloud storage.
+* Play music without downloading the entire file first, where supported.
+* Support seeking within tracks.
+* Download selected songs for offline playback.
+* Upload music from iPhone Files directly to cloud storage.
+* Display cloud storage usage where the provider exposes it.
+* Handle authentication expiry and reconnect when necessary.
+
+Cloud integrations must use official APIs and comply with provider policies.
+
+⸻
+
+5. Cloud-First Music Management
+
+This is one of the most important requirements.
+
+I want cloud storage to act as my master music library.
+
+The iPhone should primarily act as a playback device.
+
+Expected behaviour:
+
+* Music remains stored in cloud storage.
+* Songs should stream when an internet connection is available.
+* Songs should only be downloaded to iPhone when I explicitly request offline access.
+* Downloaded songs should be available without internet.
+* Deleting an offline download must NOT delete the original cloud file.
+* Cloud originals should never be deleted automatically.
+* Uploading a local file should preserve the original file.
+* The application should clearly distinguish between cloud files and downloaded files.
+
+Optional future feature:
+
+A Smart Storage Manager that tracks local storage and helps remove old offline downloads while preserving cloud originals.
+
+⸻
+
+6. Audio Formats and Sound Quality
+
+I want the application to prioritize high-quality audio playback.
+
+Preferred formats:
+
+* FLAC
+* WAV
+* ALAC
+* MP3
+* AAC
+
+Requirements:
+
+* Support lossless audio where technically possible.
+* Preserve the original audio quality.
+* Avoid unnecessary audio compression.
+* Display audio information.
+* Display codec, bitrate, sample rate and bit depth when available.
+* Handle different audio formats correctly.
+* Investigate additional codec libraries if native iOS support is insufficient.
+
+Important: Do not claim that audio quality improves simply by increasing sample rate or bitrate.
+
+⸻
+
+7. Audio Player Features
+
+The main music player should include:
+
+* Play/Pause
+* Next/Previous
+* Seek bar
+* Shuffle
+* Repeat
+* Queue management
+* Background playback
+* Lock-screen controls
+* Control Centre integration
+* Headphone controls
+* Bluetooth audio support
+* Gapless playback where supported
+* Sleep timer
+* Playback history
+* Recently played songs
+* Favourites
+
+Additional features:
+
+* Equalizer
+* Bass Boost
+* Custom equalizer profiles
+* Volume normalization / ReplayGain where supported
+* Crossfade
+* Audio quality information
+
+The application should continue playing music when the screen is locked or the user switches to another application.
+
+⸻
+
+8. Music Library Management
+
+The library should automatically organize imported music.
+
+Organize by:
+
+* Songs
+* Artists
+* Albums
+* Genres
+* Playlists
+* Favourites
+* Recently Added
+* Recently Played
+
+Additional requirements:
+
+* Search by song name.
+* Search by artist.
+* Search by album.
+* Create custom playlists.
+* Edit song information when appropriate.
+* Display available album artwork.
+* Maintain a consistent library across cloud and local sources.
+
+Metadata should be extracted from available file tags. External artwork and metadata services should only be used where permitted.
+
+⸻
+
+9. Music Search and Download Requirements
+
+I want to search for music from different Indian and international film industries.
+
+Preferred languages:
+
+* Kannada
+* Hindi
+* Tamil
+* Telugu
+* English
+
+The long-term objective is to make it easy to find music and add it to my library.
+
+However, the application must respect copyright and platform restrictions.
+
+Important limitations:
+
+* YouTube Data API can provide search results and metadata but does not authorize downloading arbitrary song audio.
+* Do not use unofficial YouTube extractors or bypass platform restrictions.
+* Commercial music must come from licensed sources or files I am legally authorized to use.
+* Offline downloads must be supported only when the relevant source grants download rights.
+
+The practical initial approach should prioritize music files that I own or am authorized to store and play.
+
+⸻
+
+10. Upload Music to Cloud
+
+I want a dedicated upload feature.
+
+Expected workflow:
+
+1. Open SONORA.
+2. Select Upload Music.
+3. Open the iPhone Files picker.
+4. Select one or multiple audio files.
+5. Select the connected cloud provider.
+6. Select the destination folder.
+7. Upload the files.
+8. Show upload progress.
+9. Confirm successful upload.
+
+The uploaded file should remain available in the cloud library.
+
+⸻
+
+11. Offline Music
+
+I want the ability to select individual songs or albums for offline playback.
+
+Requirements:
+
+* Download selected songs.
+* Download complete albums.
+* Show download progress.
+* Pause and resume downloads where possible.
+* Display offline storage usage.
+* Remove offline copies.
+* Never delete cloud originals when removing local copies.
+
+⸻
+
+12. Apple CarPlay Support
+
+I want SONORA to support both:
+
+* Wired Apple CarPlay
+* Wireless Apple CarPlay
+
+CarPlay requirements:
+
+* Display available music.
+* Browse music library using supported CarPlay templates.
+* Play and pause songs.
+* Skip tracks.
+* Browse playlists.
+* Display track information.
+* Support playback controls.
+
+Important:
+
+CarPlay integration requires the appropriate Apple entitlement and compliance with Apple’s CarPlay requirements.
+
+Do not assume that simply installing a private iPhone application automatically enables CarPlay.
+
+Design the application architecture to accommodate CarPlay, but verify entitlement eligibility and approval before promising availability.
+
+Official documentation:
+https://developer.apple.com/carplay/
+
+⸻
+
+13. Security and Privacy
+
+* Secure OAuth authentication.
+* Store tokens securely using iOS Keychain.
+* Never hardcode cloud credentials.
+* Use HTTPS.
+* Respect provider permissions.
+* Do not collect unnecessary personal information.
+* Do not upload personal music without user consent.
+* Make cloud account disconnection possible.
+* Ensure users can remove locally stored data safely.
+
+⸻
+
+14. Monetization
+
+My initial preference:
+
+* No advertisements.
+* No mandatory subscription.
+* No unnecessary paid features.
+* Use my own cloud storage accounts.
+
+The app should not depend on a third-party music subscription for its basic functionality.
+
+Cloud storage costs and provider restrictions are separate from the application’s own pricing.
+
+⸻
+
+15. Development and Deployment
+
+I have a Mac mini and an iPhone.
+
+I want to develop the actual working application and install it on my iPhone.
+
+Preferred development process:
+
+Phase 1 – Foundation
+
+* Set up Xcode project.
+* Create SONORA interface.
+* Implement local audio playback.
+* Implement background playback.
+* Test on iPhone.
+
+Phase 2 – Library
+
+* Implement music import.
+* Read metadata.
+* Create music library.
+* Implement playlists and favourites.
+
+Phase 3 – Cloud
+
+* Google Drive integration.
+* Dropbox integration.
+* OneDrive integration.
+* Investigate and implement MEGA integration.
+* Implement cloud streaming.
+* Implement uploads and offline downloads.
+
+Phase 4 – Audio
+
+* Equalizer.
+* Bass Boost.
+* Lossless format support.
+* Audio information.
+* Playback enhancements.
+
+Phase 5 – CarPlay
+
+* Investigate entitlement eligibility.
+* Implement supported CarPlay interface if approved.
+* Test on an actual CarPlay-compatible vehicle.
+
+Phase 6 – Final Release
+
+* Test thoroughly.
+* Fix bugs.
+* Optimize performance.
+* Install on my iPhone.
+* Prepare for potential App Store release.
+
+For initial personal testing, investigate free Apple Developer Account deployment through Xcode.
+
+For wider distribution and TestFlight/App Store publishing, explain the Apple Developer Program requirements and costs.
+
+⸻
+
+16. Important Development Instructions
+
+Please follow these instructions throughout the project:
+
+1. Build a real working application, not just a visual prototype.
+2. Develop one phase at a time.
+3. Explain where each piece of code belongs.
+4. Provide complete code files when necessary.
+5. Avoid giving incomplete code snippets that cannot be integrated.
+6. Do not assume a feature works without testing it.
+7. Clearly explain Apple, cloud provider and copyright limitations.
+8. Prioritize a reliable music player before advanced features.
+9. Keep the architecture modular so future features can be added.
+10. Do not introduce unnecessary paid services.
+11. Do not claim that the application has been deployed unless it has actually been installed and tested.
+
+⸻
+
+17. First Tasks in the New Conversation
+
+Start by understanding my development environment.
+
+Ask me:
+
+1. Which Mac mini processor do I have: Intel, M1, M2, M3 or M4?
+2. Is Xcode already installed?
+3. Which iPhone and iOS version am I using?
+
+Then:
+
+* Help me set up Xcode.
+* Create the initial SONORA project.
+* Build the first working music player.
+* Test it on my iPhone.
+
+Do not start with cloud integrations or CarPlay. First establish a reliable native iOS music player.
+
+Final Goal:
+
+Build SONORA into my personal premium music player, with cloud-first music management, offline playback, lossless audio support, a polished interface and eventual Apple CarPlay compatibility.
